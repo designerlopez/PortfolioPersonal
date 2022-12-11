@@ -7,22 +7,22 @@ import { TimeLineData } from '../../constants/constants';
 const TOTAL_CAROUSEL_COUNT = TimeLineData.length;
 
 const Timeline = () => {
-  // const [activeItem, setActiveItem] = useState(0);
-  // const carouselRef = useRef();
+  const [activeItem, setActiveItem] = useState(0);
+  const carouselRef = useRef()
 
   // const scroll = (node, left) => {
   //   return node.scrollTo({ left, behavior: 'smooth' });
   // }
 
-  // const handleClick = (e, i) => {
-  //   e.preventDefault();
+   const handleClick = (e, i) => {
+     e.preventDefault();
 
-  //   if (carouselRef.current) {
-  //     const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / TimeLineData.length));
+    if (carouselRef.current) {
+       const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / TimeLineData.length));
       
-  //     scroll(carouselRef.current, scrollLeft);
-  //   }
-  // }
+     scroll(carouselRef.current, scrollLeft);
+    }
+   }
 
   // const handleScroll = () => {
   //   if (carouselRef.current) {
@@ -43,9 +43,14 @@ const Timeline = () => {
   // }, []);
 
   return (
-    <div>
-      Timeline
-    </div>
+    <Section id='about'>
+      <SectionTitle>About me</SectionTitle>
+      <SectionText>
+      Full Stack Web Developer with structural, motivational approach, excellent communication and problem solving skills, with customer focus, work excellence always in mind. My Goal for every work to finish it in excellent quality and performance.
+      </SectionText>
+      
+
+    </Section>
   );
 };
 
